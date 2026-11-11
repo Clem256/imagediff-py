@@ -24,8 +24,8 @@ def build_tree(
         max_depth = max(max_depth, depth)
 
         if width <= min_block_size and height <= min_block_size:
-            block_a = arr_a[y : y + height, x : x + width]
-            block_b = arr_b[y : y + height, x : x + width]
+            block_a = arr_a[y: y + height, x: x + width]
+            block_b = arr_b[y: y + height, x: x + width]
             total, matched = compare_block(block_a, block_b, tolerance)
 
             total_pixels += total
@@ -71,9 +71,9 @@ def build_tree(
     )
 
 
-def compare_images(image_a_path: str, image_b_path: str, min_block_size: int = 6,tolerance: float = 40.0,
-        work_size: int = DEFAULT_WORK_SIZE,
-) -> ComparisonResult:
+def compare_images(image_a_path: str, image_b_path: str, min_block_size: int = 6, tolerance: float = 40.0,
+                   work_size: int = DEFAULT_WORK_SIZE,
+                   ) -> ComparisonResult:
     """High-level entry point: loads two images and evaluates spatial differences."""
     arr_a = load_image_as_array(image_a_path, work_size)
     arr_b = load_image_as_array(image_b_path, work_size)

@@ -3,6 +3,7 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from typing import List, Optional
 
+
 @dataclass
 class Node:
     """
@@ -40,6 +41,7 @@ class Node:
         Return True if this node is a terminal leaf (has no sub-blocks).
         """
         return not self.children
+
 
 @dataclass
 class ComparisonResult:

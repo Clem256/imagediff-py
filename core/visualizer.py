@@ -17,7 +17,7 @@ def render_heatmap(result: ComparisonResult, size: int = DEFAULT_WORK_SIZE) -> I
         local_t = clamped_t - segment_idx
         start_color, end_color = color_stops[segment_idx], color_stops[segment_idx + 1]
 
-        return tuple( int(start_color[i] + (end_color[i] - start_color[i]) * local_t) for i in range(3))
+        return tuple(int(start_color[i] + (end_color[i] - start_color[i]) * local_t) for i in range(3))
 
     for leaf in result.leaves():
         block_color = get_color_for_ratio(leaf.ratio or 0.0)
